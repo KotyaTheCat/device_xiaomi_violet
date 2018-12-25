@@ -66,6 +66,9 @@ on init
     write /dev/stune/top-app/schedtune.boost 10
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
+on fs
+    mkdir /persist/data 0700 system system
+
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
@@ -384,6 +387,9 @@ on post-fs-data
     mkdir /data/vendor/swap 0770 root system
     chmod 2770 /data/vendor/swap
 
+    # Create /data/time folder for time-services
+    mkdir /data/time/ 0770 system system
+
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
 
@@ -439,6 +445,8 @@ on property:ro.vendor.iocgrp.config=1
     chmod 0664 /dev/blkio/bg/tasks
     write /dev/blkio/blkio.weight 1000
     write /dev/blkio/bg/blkio.weight 100
+
+    mkdir /persist/time 0770 system system
 
 on property:persist.sys.ssr.enable_debug=*
     write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
