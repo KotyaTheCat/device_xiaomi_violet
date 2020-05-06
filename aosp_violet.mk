@@ -19,6 +19,9 @@ TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_WIFI_EXT := true
 TARGET_INCLUDE_STOCK_ARCORE := true
 TARGET_INCREMENTAL_BLOCK_BASED := true
+EVO_DONATE_URL := https://t.me/KotyaTheCat
+EVO_MAINTAINER := KotyaTheCat
+EVO_SUPPORT_URL := https://t.me/KotyaTheCat
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
