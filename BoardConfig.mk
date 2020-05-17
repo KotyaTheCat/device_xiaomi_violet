@@ -61,6 +61,9 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno612
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
+# Pixel charging animation
+TARGET_PIXEL_CHARGE_ANIM := true
+
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
